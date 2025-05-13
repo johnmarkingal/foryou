@@ -15,6 +15,7 @@
       align-items: center;
       height: 100vh;
       text-align: center;
+      flex-direction: column;
     }
 
     .card {
@@ -24,6 +25,7 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.1);
       max-width: 400px;
       animation: fadeIn 2s ease-in-out;
+      display: none; /* Hide at first */
     }
 
     h1 {
@@ -45,6 +47,23 @@
       margin-top: 20px;
     }
 
+    button {
+      background-color: #ff3366;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #e52e5f;
+    }
+
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.2); }
@@ -58,13 +77,39 @@
   </style>
 </head>
 <body>
-  <div class="card">
+
+  <!-- Button -->
+  <button onclick="startMessage()">Tap to Start</button>
+
+  <!-- Music Player -->
+  <audio id="bgMusic" loop>
+    <source src="background.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Card Message -->
+  <div class="card" id="messageCard">
     <h1>Hi</h1>
-    <p>Hey I just wanted to say this  you’re genuinely beautiful.
-        Not just in the way you look, but in the kind of energy you give off.
-        It’s rare, and honestly, hard not to notice. And
-        how do you manage to be this beautiful and make it look so effortless?</p>
+    <p>Hey I just wanted to say this  you’re genuinely beautiful.<br>
+    Not just in the way you look, but in the kind of energy you give off.<br>
+    It’s rare, and honestly, hard not to notice.<br>
+    And how do you manage to be this beautiful and make it look so effortless?</p>
     <div class="heart">❤️</div>
   </div>
+
+  <script>
+    function startMessage() {
+      const audio = document.getElementById('bgMusic');
+      const card = document.getElementById('messageCard');
+      const button = document.querySelector('button');
+
+      audio.currentTime = 30;
+      audio.play();
+
+      card.style.display = 'block';
+      button.style.display = 'none';
+    }
+  </script>
+
 </body>
 </html>
