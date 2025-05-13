@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For You ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #ffd6e0, #ffe0f0);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      max-width: 400px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      color: #ff3366;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #555;
+      margin-top: 0;
+    }
+
+    .heart {
+      font-size: 3em;
+      color: #ff3366;
+      animation: pulse 1s infinite;
+      margin-top: 20px;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Hi</h1>
+    <p>Hey I just wanted to say this  you’re genuinely beautiful.
+        Not just in the way you look, but in the kind of energy you give off.
+        It’s rare, and honestly, hard not to notice. And
+        how do you manage to be this beautiful and make it look so effortless?</p>
+    <div class="heart">❤️</div>
+  </div>
+</body>
+</html>
